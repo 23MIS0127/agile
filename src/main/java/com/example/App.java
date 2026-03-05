@@ -1,44 +1,32 @@
-import java.util.Scanner;
-
 public class App {
-    public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
+    public static char calculateGrade(int m1, int m2, int m3) {
 
-        // Input marks
-        System.out.print("Enter marks for Subject 1: ");
-        int sub1 = sc.nextInt();
-
-        System.out.print("Enter marks for Subject 2: ");
-        int sub2 = sc.nextInt();
-
-        System.out.print("Enter marks for Subject 3: ");
-        int sub3 = sc.nextInt();
-
-        // Calculate total and average
-        int total = sub1 + sub2 + sub3;
+        int total = m1 + m2 + m3;
         double average = total / 3.0;
 
-        // Determine grade
-        char grade;
-
         if (average >= 90) {
-            grade = 'A';
+            return 'A';
         } else if (average >= 75) {
-            grade = 'B';
+            return 'B';
         } else if (average >= 60) {
-            grade = 'C';
+            return 'C';
         } else if (average >= 50) {
-            grade = 'D';
+            return 'D';
         } else {
-            grade = 'F';
+            return 'F';
         }
+    }
 
-        // Output results
-        System.out.println("\nTotal Marks: " + total);
-        System.out.println("Average Marks: " + average);
+    public static void main(String[] args) {
+
+        int m1 = 85;
+        int m2 = 90;
+        int m3 = 80;
+
+        char grade = calculateGrade(m1, m2, m3);
+
+        System.out.println("Student Marks: " + m1 + ", " + m2 + ", " + m3);
         System.out.println("Grade: " + grade);
-
-        sc.close();
     }
 }
